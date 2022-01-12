@@ -16,7 +16,7 @@ public class Pavimento : MonoBehaviour
     {
         if (!GameController.gameover)
         {
-            if (transform.position.x >= -15.3f)
+            if (transform.position.x >= -26.4f)
                 transform.position = new Vector2(transform.position.x - 2f * Time.deltaTime, transform.position.y);
             else
                 transform.position = posIniziale;
