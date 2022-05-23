@@ -30,5 +30,9 @@ public class GameOver : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    public void Home(int sceneID)
+    {
+        SceneManager.LoadScene(sceneID);
+    }
 
 }
