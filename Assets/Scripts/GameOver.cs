@@ -8,6 +8,7 @@ public class GameOver : MonoBehaviour
     // Start is called before the first frame update
     public GameObject gameOverPanel;
     private GameObject player;
+    AudioSource myAudio;
 
     private void Start()
     {
@@ -16,10 +17,12 @@ public class GameOver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        myAudio = GetComponent<AudioSource>();
         if (player == null)
         {
             Debug.Log("Show panel");
             gameOverPanel.SetActive(true);
+            myAudio.mute = true;  //to mute
         }
     }
 
@@ -27,4 +30,5 @@ public class GameOver : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
 }
