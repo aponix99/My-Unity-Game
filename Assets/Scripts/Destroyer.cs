@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoopingBackground : MonoBehaviour
+public class Destroyer : MonoBehaviour
 {
-    public float backgroundSpeed;
-    public Renderer backgroundRenderer;
     // Start is called before the first frame update
+    public float lifeTime;
     void Start()
     {
         
@@ -15,6 +14,6 @@ public class LoopingBackground : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        backgroundRenderer.material.mainTextureOffset += new Vector2(backgroundSpeed * Time.deltaTime, 0f);
+        Destroy(gameObject, lifeTime);
     }
 }
