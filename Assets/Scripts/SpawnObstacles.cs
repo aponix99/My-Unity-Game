@@ -12,18 +12,22 @@ public class SpawnObstacles : MonoBehaviour
     public float maxX;
     public float timeBetweenSpawn;
     private float spawnTime;
+    private GameObject player;
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > spawnTime)
+        if (player != null)
         {
-            Spawn();
-            spawnTime = Time.time + timeBetweenSpawn;
+            if (Time.time > spawnTime)
+            {
+                Spawn();
+                spawnTime = Time.time + timeBetweenSpawn;
+            }
         }
     }
 
