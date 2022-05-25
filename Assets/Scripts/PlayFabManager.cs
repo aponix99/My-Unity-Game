@@ -22,17 +22,17 @@ public class PlayFabManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Login();
+        //Login();
     }
 
-    void Login()
-    {
-        var request = new LoginWithCustomIDRequest{
-            CustomId = SystemInfo.deviceUniqueIdentifier,
-            CreateAccount = true
-        };
-        PlayFabClientAPI.LoginWithCustomID(request, OnSuccess, OnError);
-    }
+   // void Login()
+    //{
+      //  var request = new LoginWithCustomIDRequest{
+        //    CustomId = SystemInfo.deviceUniqueIdentifier,
+          //  CreateAccount = true
+        //};
+        //PlayFabClientAPI.LoginWithCustomID(request, OnSuccess, OnError);
+    //}
     void OnSuccess(LoginResult result)
     {
         Debug.Log("Success Login");
@@ -81,7 +81,7 @@ public class PlayFabManager : MonoBehaviour
 
         foreach (Transform item in rowsParent)
         {
-            if (item.gameObject!= null)
+            if (item.gameObject != null)
             Destroy(item.gameObject);
         }
 
@@ -91,7 +91,7 @@ public class PlayFabManager : MonoBehaviour
             GameObject newGo = Instantiate(rowPrefab, rowsParent);
             Text[] texts = newGo.GetComponentsInChildren<Text>();
             texts[0].text = (item.Position + 1).ToString();
-            texts[1].text = item.PlayFabId;
+            texts[1].text = item.DisplayName;
             texts[2].text = item.StatValue.ToString();
         }
     
