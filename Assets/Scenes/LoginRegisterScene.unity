@@ -3706,7 +3706,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Check your email and confirm the register.
+  m_Text: Your email has been succesfully registered!
 --- !u!222 &1223950828
 CanvasRenderer:
   m_ObjectHideFlags: 0
